@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-first Master Branch for Teamspeak 3 Plugin SDK
+first Master Branch for Teamspeak 3 Plugin
 
 ## Copyright
 
