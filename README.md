@@ -18,4 +18,4 @@ Copyright &copy; TeamSpeak Systems GmbH. All rights reserved.
 
 ## Version 0.1 Masterbranch
 
-- declare names in head with #define -> better reading
+- declare names in head with #define -> better reading (marked comment in plugin.c)

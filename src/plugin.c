@@ -41,6 +41,8 @@ static struct TS3Functions ts3Functions;
 #define SERVERINFO_BUFSIZE 256
 #define CHANNELINFO_BUFSIZE 512
 #define RETURNCODE_BUFSIZE 128
+
+/* declared here not in code, better reading*/
 #define PLUGIN_NAME L"Test Plugin"
 #define PLUGIN_NAME_ALT "Test Plugin"
 

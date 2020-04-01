@@ -69,9 +69,9 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Users\hermann\Documents\GitHub\ts3client-pluginsdk\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
-    <ReferencePath>C:\Users\hermann\Documents\GitHub\ts3client-pluginsdk\include;$(VC_ReferencesPath_x86);</ReferencePath>
-    <LibraryPath>C:\Users\hermann\Documents\GitHub\ts3client-pluginsdk\include;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86</LibraryPath>
+    <IncludePath>C:\Users\hermann\Documents\GitHub\ts3-plugin\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <ReferencePath>C:\Users\hermann\Documents\GitHub\ts3-plugin\include;$(VC_ReferencesPath_x86);</ReferencePath>
+    <LibraryPath>C:\Users\hermann\Documents\GitHub\ts3-plugin\include;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86);$(NETFXKitsDir)Lib\um\x86</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LibraryPath>C:\Users\hermann\Documents\GitHub\ts3client-pluginsdk\include;$(LibraryPath)</LibraryPath>
