@@ -33,7 +33,7 @@ static struct TS3Functions ts3Functions;
 #endif
 
 #define PLUGIN_API_VERSION 23
-#define PLUGIN_VERSION '0.1'
+#define PLUGIN_VERSION "0.1"
 
 #define PATH_BUFSIZE 512
 #define COMMAND_BUFSIZE 128
