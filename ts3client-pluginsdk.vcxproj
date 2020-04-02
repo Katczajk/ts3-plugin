@@ -42,7 +42,7 @@
     <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
@@ -77,6 +77,9 @@
     <LibraryPath>C:\Users\hermann\Documents\GitHub\ts3client-pluginsdk\include;$(LibraryPath)</LibraryPath>
     <IncludePath>C:\Users\hermann\Documents\GitHub\ts3client-pluginsdk\include;$(IncludePath)</IncludePath>
     <ReferencePath>C:\Users\hermann\Documents\GitHub\ts3client-pluginsdk\include;$(ReferencePath)</ReferencePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>C:\Users\hermann\Documents\GitHub\ts3-plugin\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
