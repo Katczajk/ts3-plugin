@@ -18,9 +18,6 @@
     <ClCompile Include="src\plugin.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\itp_func.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\plugin_definitions.h">
@@ -50,7 +47,7 @@
     <ClInclude Include="src\plugin.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\itp_func.h">
+    <ClInclude Include="src\itpilz.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

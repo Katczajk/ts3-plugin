@@ -21,9 +21,8 @@
 #include "ts3_functions.h"
 #include "plugin.h"
 
-/* own IT-Pilz subincludes here */
-/* we guard include up here */
-#include "itp_func.h"
+/* IT-Pilz Header File Function Pool */
+#include "plugin.h"
 
 
 static struct TS3Functions ts3Functions;
@@ -1127,12 +1126,6 @@ void ts3plugin_onMenuItemEvent(uint64 serverConnectionHandlerID, enum PluginMenu
 			switch(menuItemID) {
 				case MENU_ID_CHANNEL_1: {
 					/* Menu channel 1 was triggered */
-					anyID *ClientList;
-					anyID myID;
-					uint64 myChannel;
-
-					itp_moveclientstochannel(serverConnectionHandlerID, ClientList, myID, myChannel);
-
 
 
 				}
