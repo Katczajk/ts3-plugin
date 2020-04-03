@@ -21,6 +21,9 @@
 #include "ts3_functions.h"
 #include "plugin.h"
 
+/* own IT-Pilz subincludes here */
+/* we guard include up here */
+#include "itp_func.h"
 
 
 static struct TS3Functions ts3Functions;
@@ -43,8 +46,8 @@ static struct TS3Functions ts3Functions;
 #define RETURNCODE_BUFSIZE 128
 
 /* declared here not in code, better reading*/
-#define PLUGIN_NAME L"Test Plugin"
-#define PLUGIN_NAME_ALT "Test Plugin"
+#define PLUGIN_NAME L"IT-Pilz Plugin"
+#define PLUGIN_NAME_ALT "IT_Pilz Plugin"
 
 static char* pluginID = NULL;
 
@@ -583,11 +586,18 @@ void ts3plugin_initMenus(struct PluginMenuItem*** menuItems, char** menuIcon) {
 	BEGIN_CREATE_MENUS(7);  /* IMPORTANT: Number of menu items must be correct! */
 	CREATE_MENU_ITEM(PLUGIN_MENU_TYPE_CLIENT,  MENU_ID_CLIENT_1,  "Client item 1",  "1.png");
 	CREATE_MENU_ITEM(PLUGIN_MENU_TYPE_CLIENT,  MENU_ID_CLIENT_2,  "Client item 2",  "2.png");
-	CREATE_MENU_ITEM(PLUGIN_MENU_TYPE_CHANNEL, MENU_ID_CHANNEL_1, "Channel item 1", "1.png");
-	CREATE_MENU_ITEM(PLUGIN_MENU_TYPE_CHANNEL, MENU_ID_CHANNEL_2, "Channel item 2", "2.png");
-	CREATE_MENU_ITEM(PLUGIN_MENU_TYPE_CHANNEL, MENU_ID_CHANNEL_3, "Channel item 3", "3.png");
-	CREATE_MENU_ITEM(PLUGIN_MENU_TYPE_GLOBAL,  MENU_ID_GLOBAL_1,  "Global item 1",  "1.png");
-	CREATE_MENU_ITEM(PLUGIN_MENU_TYPE_GLOBAL,  MENU_ID_GLOBAL_2,  "Global item 2",  "2.png");
+	CREATE_MENU_ITEM(PLUGIN_MENU_TYPE_CHANNEL, MENU_ID_CHANNEL_1, "bewege alle Clients in Channel zu mir ...", "1.png");
+	CREATE_MENU_ITEM(PLUGIN_MENU_TYPE_CHANNEL, MENU_ID_CHANNEL_2, "disabled", "2.png"); /* disabled for now */
+	CREATE_MENU_ITEM(PLUGIN_MENU_TYPE_CHANNEL, MENU_ID_CHANNEL_3, "disabled too", "3.png"); /* disabled for now */
+	ts3Functions.setPluginMenuEnabled(pluginID, MENU_ID_CHANNEL_2, 0); /* disable channel menu 2 */
+	ts3Functions.setPluginMenuEnabled(pluginID, MENU_ID_CHANNEL_3, 0); /* disable channel menu 3 */
+	
+	CREATE_MENU_ITEM(PLUGIN_MENU_TYPE_GLOBAL,  MENU_ID_GLOBAL_1,  "disabled",  "1.png"); /* disabled for now */
+	CREATE_MENU_ITEM(PLUGIN_MENU_TYPE_GLOBAL,  MENU_ID_GLOBAL_2,  "disabled too",  "2.png");  /* disabled for now */
+	ts3Functions.setPluginMenuEnabled(pluginID, MENU_ID_GLOBAL_1, 0); /* disable Global 1 Menu */
+	ts3Functions.setPluginMenuEnabled(pluginID, MENU_ID_GLOBAL_2, 0); /* disable Global 2 Menu */
+
+
 	END_CREATE_MENUS;  /* Includes an assert checking if the number of menu items matched */
 
 	/*
