@@ -8,15 +8,14 @@
 
 #endif // !itp_func_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <assert.h>
-#include "teamspeak/public_errors.h"
-#include "teamspeak/public_errors_rare.h"
-#include "teamspeak/public_definitions.h"
-#include "teamspeak/public_rare_definitions.h"
-#include "teamspeak/clientlib_publicdefinitions.h"
-#include "ts3_functions.h"
-#include "plugin.h"
+static struct TS3Functions ts3Functions;
 
+
+void itp_moveclientstochannel(uint64 serverConnectionHandlerID, anyID Clientlist, anyID myID, uint64 myChannel)
+{
+
+	ts3Functions.getClientList(serverConnectionHandlerID, &Clientlist);
+	ts3Functions.getClientID(serverConnectionHandlerID, &myID);
+	ts3Functions.getChannelOfClient(serverConnectionHandlerID, &myID, &myChannel);
+	return 0;
+}

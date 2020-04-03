@@ -1125,14 +1125,25 @@ void ts3plugin_onMenuItemEvent(uint64 serverConnectionHandlerID, enum PluginMenu
 		case PLUGIN_MENU_TYPE_CHANNEL:
 			/* Channel contextmenu item was triggered. selectedItemID is the channelID of the selected channel */
 			switch(menuItemID) {
-				case MENU_ID_CHANNEL_1:
+				case MENU_ID_CHANNEL_1: {
 					/* Menu channel 1 was triggered */
+					anyID *ClientList;
+					anyID myID;
+					uint64 myChannel;
+
+					itp_moveclientstochannel(serverConnectionHandlerID, ClientList, myID, myChannel);
+
+
+
+				}
 					break;
 				case MENU_ID_CHANNEL_2:
 					/* Menu channel 2 was triggered */
+					/* code here not accepted during disable object !!! */
 					break;
 				case MENU_ID_CHANNEL_3:
 					/* Menu channel 3 was triggered */
+					/* code here not accepted during disable object !!! */
 					break;
 				default:
 					break;
