@@ -21,9 +21,6 @@
 #include "ts3_functions.h"
 #include "plugin.h"
 
-/* IT-Pilz Header File Function Pool */
-#include "plugin.h"
-
 
 static struct TS3Functions ts3Functions;
 
@@ -588,11 +585,10 @@ void ts3plugin_initMenus(struct PluginMenuItem*** menuItems, char** menuIcon) {
 	CREATE_MENU_ITEM(PLUGIN_MENU_TYPE_CHANNEL, MENU_ID_CHANNEL_1, "bewege alle Clients in Channel zu mir ...", "1.png");
 	CREATE_MENU_ITEM(PLUGIN_MENU_TYPE_CHANNEL, MENU_ID_CHANNEL_2, "disabled", "2.png"); /* disabled for now */
 	CREATE_MENU_ITEM(PLUGIN_MENU_TYPE_CHANNEL, MENU_ID_CHANNEL_3, "disabled too", "3.png"); /* disabled for now */
+	CREATE_MENU_ITEM(PLUGIN_MENU_TYPE_GLOBAL,  MENU_ID_GLOBAL_1,  "Menu 1",  "1.png"); /* disabled for now */
+	CREATE_MENU_ITEM(PLUGIN_MENU_TYPE_GLOBAL,  MENU_ID_GLOBAL_2,  "disabled too",  "2.png");  /* disabled for now */
 	ts3Functions.setPluginMenuEnabled(pluginID, MENU_ID_CHANNEL_2, 0); /* disable channel menu 2 */
 	ts3Functions.setPluginMenuEnabled(pluginID, MENU_ID_CHANNEL_3, 0); /* disable channel menu 3 */
-	
-	CREATE_MENU_ITEM(PLUGIN_MENU_TYPE_GLOBAL,  MENU_ID_GLOBAL_1,  "disabled",  "1.png"); /* disabled for now */
-	CREATE_MENU_ITEM(PLUGIN_MENU_TYPE_GLOBAL,  MENU_ID_GLOBAL_2,  "disabled too",  "2.png");  /* disabled for now */
 	ts3Functions.setPluginMenuEnabled(pluginID, MENU_ID_GLOBAL_1, 0); /* disable Global 1 Menu */
 	ts3Functions.setPluginMenuEnabled(pluginID, MENU_ID_GLOBAL_2, 0); /* disable Global 2 Menu */
 
@@ -1124,11 +1120,13 @@ void ts3plugin_onMenuItemEvent(uint64 serverConnectionHandlerID, enum PluginMenu
 		case PLUGIN_MENU_TYPE_CHANNEL:
 			/* Channel contextmenu item was triggered. selectedItemID is the channelID of the selected channel */
 			switch(menuItemID) {
-				case MENU_ID_CHANNEL_1: {
+				case MENU_ID_CHANNEL_1: 
 					/* Menu channel 1 was triggered */
-
-
-				}
+					{
+						anyID ClientID;
+						ts3Functions.getClientID(serverConnectionHandlerID, &ClientID);
+					}
+				
 					break;
 				case MENU_ID_CHANNEL_2:
 					/* Menu channel 2 was triggered */

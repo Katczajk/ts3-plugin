@@ -47,8 +47,5 @@
     <ClInclude Include="src\plugin.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\itpilz.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
